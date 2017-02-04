@@ -44,10 +44,11 @@ The listener creates a `Message` using a `MessageFactory`. The `Message` is pass
 
 The `MessageFactory` and `Service` components are swappable components.
 
-This package provides 2 message factories:
+This package provides 3 message factories:
 
 1. `Mdb\PayPal\Ipn\MessageFactory\InputStreamMessageFactory` - Creates a message from the `php://input` stream
 2. `Mdb\PayPal\Ipn\MessageFactory\ArrayMessageFactory` - Creates a message from an array passed to the `setData` method
+2. `Mdb\PayPal\Ipn\MessageFactory\RequestMessageFactory` - Creates a message from the globals using the [Symfony HttpFoundation Component](https://symfony.com/doc/current/components/http_foundation.html)
 
 This package provides 1 service:
 
@@ -55,10 +56,11 @@ This package provides 1 service:
 
 ## <a id="usage"></a>Usage
 
-You can either build up the listener object manually or you can use a listener builder. This package provides 2 listener builders:
+You can either build up the listener object manually or you can use a listener builder. This package provides 3 listener builders:
 
 1. `Mdb\PayPal\Ipn\ListenerBuilder\Guzzle\InputStreamListenerBuilder` - Builds a listener using the guzzle service and the input stream message factory
 2. `Mdb\PayPal\Ipn\ListenerBuilder\Guzzle\ArrayListenerBuilder` - Builds a listener using the guzzle service and the array message factory
+2. `Mdb\PayPal\Ipn\ListenerBuilder\Guzzle\RequestListenerBuilder` - Builds a listener using the guzzle service and the request message factory
 
 Using a listener builder is the preferred way of building up a listener object.
 

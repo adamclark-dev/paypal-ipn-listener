@@ -1,5 +1,10 @@
 # Changelog
 
+## Next
+
+- add `Mdb\PayPal\Ipn\MessageFactory\RequestMessageFactory` and `Mdb\PayPal\Ipn\ListenerBuilder\Guzzle\RequestListenerBuilder` which make use of the [Symfony HttpFoundation Component](https://symfony.com/doc/current/components/http_foundation.html)
+- simplified message encoding / decoding logic
+
 ## 8.0.0
 
 - drop support for php <5.6
